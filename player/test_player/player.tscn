@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cfqmmglqjitys"]
+
+[ext_resource type="Script" uid="uid://7lmkhr317xqp" path="res://player/test_player/player.gd" id="1_uuyl5"]
+[ext_resource type="Script" uid="uid://8ftkkhnrmuuw" path="res://components/shared/gravity_component.gd" id="2_42tnh"]
+[ext_resource type="Script" uid="uid://dhdob6tcv8tu4" path="res://components/player/movement_component.gd" id="3_55wyy"]
+[ext_resource type="Script" uid="uid://chth5otgebyeo" path="res://components/player/jump_component.gd" id="4_4ejnq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cw0bw"]
+size = Vector2(34, 39)
+
+[node name="player" type="CharacterBody2D" unique_id=1470495087]
+collision_layer = 2
+script = ExtResource("1_uuyl5")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=303779873]
+offset_right = 36.0
+offset_bottom = 40.0
+color = Color(0.57762194, 0.7774347, 0.9934501, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=516053795]
+position = Vector2(18, 20.5)
+shape = SubResource("RectangleShape2D_cw0bw")
+
+[node name="GravityComponent" type="Node" parent="." unique_id=1545766019 node_paths=PackedStringArray("player")]
+script = ExtResource("2_42tnh")
+player = NodePath("..")
+metadata/_custom_type_script = "uid://8ftkkhnrmuuw"
+
+[node name="MovementComponent" type="Node" parent="." unique_id=668508620 node_paths=PackedStringArray("body")]
+script = ExtResource("3_55wyy")
+body = NodePath("..")
+metadata/_custom_type_script = "uid://dhdob6tcv8tu4"
+
+[node name="JumpComponent" type="Node" parent="." unique_id=2116430225 node_paths=PackedStringArray("player")]
+script = ExtResource("4_4ejnq")
+player = NodePath("..")
+metadata/_custom_type_script = "uid://chth5otgebyeo"
