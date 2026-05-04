@@ -1,14 +1,29 @@
 [gd_scene format=3 uid="uid://c3s7viippuc3h"]
 
+[ext_resource type="Script" uid="uid://b4o2gsbxiqdjn" path="res://components/enemy/enemy_boundry_component.gd" id="1_4ospm"]
 [ext_resource type="PackedScene" uid="uid://cfqmmglqjitys" path="res://player/test_player/player.tscn" id="1_p6lu6"]
+[ext_resource type="PackedScene" uid="uid://cev57jx7o41jq" path="res://enemy/slime/slime.tscn" id="2_4napq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hjlt"]
 size = Vector2(943, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4napq"]
+size = Vector2(11, 510)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ospm"]
+size = Vector2(11, 512)
 
 [node name="DevRoom" type="Node2D" unique_id=243512570]
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=1255799877]
 position = Vector2(108, 501)
+
+[node name="EnemyBoundryComponent" type="Node2D" parent="Floor" unique_id=43983151 node_paths=PackedStringArray("left_boundary", "right_boundary")]
+position = Vector2(942, 14)
+script = ExtResource("1_4ospm")
+left_boundary = NodePath("../LeftBoundry")
+right_boundary = NodePath("../RightBoundry")
+metadata/_custom_type_script = "uid://b4o2gsbxiqdjn"
 
 [node name="ColorRect" type="ColorRect" parent="Floor" unique_id=1267243602]
 offset_left = -12.0
@@ -20,5 +35,24 @@ offset_bottom = 24.0
 position = Vector2(459.5, 8.5)
 shape = SubResource("RectangleShape2D_2hjlt")
 
+[node name="LeftBoundry" type="Area2D" parent="Floor" unique_id=1695454875]
+position = Vector2(-13, 16)
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/LeftBoundry" unique_id=655233922]
+position = Vector2(-4.5, -245)
+shape = SubResource("RectangleShape2D_4napq")
+
+[node name="RightBoundry" type="Area2D" parent="Floor" unique_id=593160799]
+position = Vector2(942, 14)
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/RightBoundry" unique_id=720818067]
+position = Vector2(-4.5, -246)
+shape = SubResource("RectangleShape2D_4ospm")
+
 [node name="player" parent="." unique_id=1470495087 instance=ExtResource("1_p6lu6")]
 position = Vector2(480, 247)
+
+[node name="Slime" parent="." unique_id=2070157828 instance=ExtResource("2_4napq")]
+position = Vector2(579, 392)
