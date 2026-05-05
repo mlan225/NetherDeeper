@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://7w2apnhm58k1"]
-
-[ext_resource type="Script" uid="uid://cjjfhvtqgv50b" path="res://components/enemy/enemy_hurtbox_component.gd" id="1_et4cc"]
-
-[node name="EnemyHurtboxComponent" type="Node" unique_id=945306287]
-script = ExtResource("1_et4cc")

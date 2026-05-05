@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://8ftkkhnrmuuw" path="res://components/shared/gravity_component.gd" id="2_42tnh"]
 [ext_resource type="Script" uid="uid://dhdob6tcv8tu4" path="res://components/player/movement_component.gd" id="3_55wyy"]
 [ext_resource type="Script" uid="uid://chth5otgebyeo" path="res://components/player/jump_component.gd" id="4_4ejnq"]
+[ext_resource type="PackedScene" uid="uid://1yswnglxw61s" path="res://components/player/test_weapon.tscn" id="5_7qp7k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cw0bw"]
 size = Vector2(34, 39)
@@ -35,3 +36,8 @@ metadata/_custom_type_script = "uid://dhdob6tcv8tu4"
 script = ExtResource("4_4ejnq")
 player = NodePath("..")
 metadata/_custom_type_script = "uid://chth5otgebyeo"
+
+[node name="WeaponSlot" type="Node2D" parent="." unique_id=319194030]
+position = Vector2(27, 24)
+
+[node name="TestWeapon" parent="WeaponSlot" unique_id=1837368558 instance=ExtResource("5_7qp7k")]
