@@ -15,10 +15,8 @@ func _ready():
 func _on_left_boundary_entered(body: CharacterBody2D):
 	if body.is_in_group("enemy"):
 		body.direction = 1
-		print("hit the left boundary")
 
 #Right boundary signal
 func _on_right_boundary_entered(body: CharacterBody2D):
 	if body.is_in_group("enemy"):
 		body.direction = -1
-		print("hit the left boundary")

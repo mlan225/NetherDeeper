@@ -8,6 +8,8 @@ class_name EnemyHurtboxComponent
 signal hurt_enemy(enemy, damage)
 
 func _ready() -> void:
+	add_to_group("enemy/hurtbox")
+	
 	if enemy_hurt_area:
 		enemy_hurt_area.body_entered.connect(_on_hurt_area_entered)
 	else:
@@ -18,4 +20,5 @@ func _on_hurt_area_entered(body):
 	#if body.has_method("get_damage"):
 		#var dmg = body.get_damage()
 		#emit_signal("hurt", owner, dmg)
-	print("enemy hurtbox triggered! DEVNOTE: ENEMY IS TRIGGERING ITS OWN SIGNAL.")
+	if(body.is_in_group("player/hitbox")):
+		print("enemy hurtbox triggered!")
