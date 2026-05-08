@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b4o2gsbxiqdjn" path="res://components/enemy/enemy_boundry_component.gd" id="1_4ospm"]
 [ext_resource type="PackedScene" uid="uid://cfqmmglqjitys" path="res://player/test_player/player.tscn" id="1_p6lu6"]
 [ext_resource type="PackedScene" uid="uid://cev57jx7o41jq" path="res://enemy/slime/slime.tscn" id="2_4napq"]
+[ext_resource type="Script" uid="uid://dse1rg3m5bcq0" path="res://components/enemy/spawn_manager.gd" id="4_ynnkj"]
+[ext_resource type="Script" uid="uid://cydnpnmmti1bf" path="res://components/enemy/slime_spawner.gd" id="5_7lvt2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hjlt"]
 size = Vector2(943, 31)
@@ -56,3 +58,12 @@ position = Vector2(480, 247)
 
 [node name="Slime" parent="." unique_id=2070157828 instance=ExtResource("2_4napq")]
 position = Vector2(579, 392)
+
+[node name="SpawnManagerComponent" type="Node" parent="." unique_id=188893678 node_paths=PackedStringArray("slime_spawner")]
+script = ExtResource("4_ynnkj")
+slime_spawner = NodePath("../SlimeSpawner")
+metadata/_custom_type_script = "uid://dse1rg3m5bcq0"
+
+[node name="SlimeSpawner" type="Node" parent="." unique_id=1944092177]
+script = ExtResource("5_7lvt2")
+metadata/_custom_type_script = "uid://cydnpnmmti1bf"

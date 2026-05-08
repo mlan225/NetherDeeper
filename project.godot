@@ -10,13 +10,14 @@ config_version=5
 
 [application]
 
-config/name="NetherDeeper"
+config/name="SpudsDuds"
 run/main_scene="uid://c3s7viippuc3h"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/initial_position_type=3
 window/vsync/vsync_mode=2
 
 [input]

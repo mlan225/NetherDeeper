@@ -14,4 +14,5 @@ func _ready() -> void:
 		
 func _on_hurt_area_entered(area: Area2D):
 	if area.is_in_group("player/hitbox"):
-		print("enemy hurtbox triggered!")
+		#TODO: Temp death mechanic, will replace with more functionality
+		enemy.queue_free()

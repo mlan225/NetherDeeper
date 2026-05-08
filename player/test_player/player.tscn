@@ -13,10 +13,21 @@ size = Vector2(34, 39)
 collision_layer = 2
 script = ExtResource("1_uuyl5")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=303779873]
-offset_right = 36.0
-offset_bottom = 40.0
+[node name="playerContainer" type="Node2D" parent="." unique_id=78327811]
+position = Vector2(17, 19)
+
+[node name="ColorRect" type="ColorRect" parent="playerContainer" unique_id=303779873]
+offset_left = -17.0
+offset_top = -19.0
+offset_right = 19.0
+offset_bottom = 21.0
 color = Color(0.57762194, 0.7774347, 0.9934501, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="WeaponSlot" type="Node2D" parent="playerContainer" unique_id=319194030]
+position = Vector2(10, 5)
+
+[node name="TestWeapon" parent="playerContainer/WeaponSlot" unique_id=1837368558 instance=ExtResource("5_7qp7k")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=516053795]
 position = Vector2(18, 20.5)
@@ -27,17 +38,13 @@ script = ExtResource("2_42tnh")
 player = NodePath("..")
 metadata/_custom_type_script = "uid://8ftkkhnrmuuw"
 
-[node name="MovementComponent" type="Node" parent="." unique_id=668508620 node_paths=PackedStringArray("body")]
+[node name="MovementComponent" type="Node" parent="." unique_id=668508620 node_paths=PackedStringArray("body", "body_container")]
 script = ExtResource("3_55wyy")
 body = NodePath("..")
+body_container = NodePath("../playerContainer")
 metadata/_custom_type_script = "uid://dhdob6tcv8tu4"
 
 [node name="JumpComponent" type="Node" parent="." unique_id=2116430225 node_paths=PackedStringArray("player")]
 script = ExtResource("4_4ejnq")
 player = NodePath("..")
 metadata/_custom_type_script = "uid://chth5otgebyeo"
-
-[node name="WeaponSlot" type="Node2D" parent="." unique_id=319194030]
-position = Vector2(27, 24)
-
-[node name="TestWeapon" parent="WeaponSlot" unique_id=1837368558 instance=ExtResource("5_7qp7k")]
