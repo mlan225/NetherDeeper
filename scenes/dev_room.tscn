@@ -56,14 +56,16 @@ shape = SubResource("RectangleShape2D_4ospm")
 [node name="player" parent="." unique_id=1470495087 instance=ExtResource("1_p6lu6")]
 position = Vector2(480, 247)
 
-[node name="Slime" parent="." unique_id=2070157828 instance=ExtResource("2_4napq")]
-position = Vector2(579, 392)
-
 [node name="SpawnManagerComponent" type="Node" parent="." unique_id=188893678 node_paths=PackedStringArray("slime_spawner")]
 script = ExtResource("4_ynnkj")
 slime_spawner = NodePath("../SlimeSpawner")
 metadata/_custom_type_script = "uid://dse1rg3m5bcq0"
 
-[node name="SlimeSpawner" type="Node" parent="." unique_id=1944092177]
+[node name="SlimeSpawner" type="Node" parent="." unique_id=1944092177 node_paths=PackedStringArray("left_boundry", "right_boundry", "scene_floor")]
 script = ExtResource("5_7lvt2")
+slime_scene = ExtResource("2_4napq")
+left_boundry = NodePath("../Floor/LeftBoundry")
+right_boundry = NodePath("../Floor/RightBoundry")
+scene_floor = NodePath("../Floor")
+max_spawn_count = 1
 metadata/_custom_type_script = "uid://cydnpnmmti1bf"

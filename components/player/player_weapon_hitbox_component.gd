@@ -1,7 +1,7 @@
 extends Node
-class_name PlayerWeaponHurtboxComponent
+class_name PlayerWeaponHitboxComponent
 
-@export_subgroup("Nodes")
+@export_group("Nodes")
 @export var hitbox: Area2D
 
 func _ready() -> void:

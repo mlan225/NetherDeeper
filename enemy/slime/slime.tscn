@@ -3,12 +3,16 @@
 [ext_resource type="Script" uid="uid://cl2hwdgwjs00s" path="res://enemy/slime/slime.gd" id="1_afspt"]
 [ext_resource type="Script" uid="uid://8ftkkhnrmuuw" path="res://components/shared/gravity_component.gd" id="1_ci0n5"]
 [ext_resource type="Script" uid="uid://cjjfhvtqgv50b" path="res://components/enemy/enemy_hurtbox_component.gd" id="3_lkvfe"]
+[ext_resource type="Script" uid="uid://dwk2twd4ubw2k" path="res://components/enemy/enemy_hitbox_component.gd" id="4_ngdgp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afspt"]
 size = Vector2(40, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkvfe"]
 size = Vector2(50, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngdgp"]
+size = Vector2(28.76762, 34.357983)
 
 [node name="Slime" type="CharacterBody2D" unique_id=2070157828]
 collision_layer = 4
@@ -36,8 +40,22 @@ collision_mask = 8
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_lkvfe")
 
+[node name="Hitbox" type="Area2D" parent="." unique_id=992848096]
+collision_layer = 64
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1857212387]
+position = Vector2(20.073177, 20.252396)
+scale = Vector2(1.3853649, 1.1495204)
+shape = SubResource("RectangleShape2D_ngdgp")
+
 [node name="EnemyHurtboxComponent" type="Node" parent="." unique_id=1416692102 node_paths=PackedStringArray("enemy", "enemy_hurt_area")]
 script = ExtResource("3_lkvfe")
 enemy = NodePath("..")
 enemy_hurt_area = NodePath("../HurtBox")
 metadata/_custom_type_script = "uid://cjjfhvtqgv50b"
+
+[node name="EnemyHitboxComponent" type="Node" parent="." unique_id=1199398538 node_paths=PackedStringArray("hitbox")]
+script = ExtResource("4_ngdgp")
+hitbox = NodePath("../Hitbox")
+metadata/_custom_type_script = "uid://dwk2twd4ubw2k"

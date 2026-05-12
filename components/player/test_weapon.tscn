@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1yswnglxw61s"]
 
-[ext_resource type="Script" uid="uid://ddjksoo7pswlc" path="res://components/player/player_weapon_hurtbox_component.gd" id="1_m1hkl"]
+[ext_resource type="Script" uid="uid://ddjksoo7pswlc" path="res://components/player/player_weapon_hitbox_component.gd" id="1_m1hkl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i58ob"]
 size = Vector2(33, 9)
@@ -13,6 +13,7 @@ offset_bottom = 5.0
 color = Color(0.87148964, 0.5573097, 0.18970126, 1)
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1260920994]
+process_mode = 4
 collision_layer = 8
 collision_mask = 4
 
@@ -20,7 +21,7 @@ collision_mask = 4
 position = Vector2(25.5, 2.5)
 shape = SubResource("RectangleShape2D_i58ob")
 
-[node name="PlayerWeaponHurtboxComponent" type="Node" parent="." unique_id=1014165921 node_paths=PackedStringArray("hitbox")]
+[node name="PlayerWeaponHitboxComponent" type="Node" parent="." unique_id=85132480 node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_m1hkl")
 hitbox = NodePath("../Hitbox")
 metadata/_custom_type_script = "uid://ddjksoo7pswlc"
