@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://djfi8kvuum4g7"]
+
+[ext_resource type="Script" uid="uid://dwk2twd4ubw2k" path="res://components/enemy/enemy_hitbox_component.gd" id="1_klfxy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5p6gn"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klfxy"]
+size = Vector2(28.76762, 34.357983)
+
+[node name="TestDamageBlock" type="CharacterBody2D" unique_id=20678461]
+collision_layer = 0
+collision_mask = 0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=199706592]
+offset_left = -2.0
+offset_right = 38.0
+offset_bottom = 40.0
+color = Color(0, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1728806449]
+position = Vector2(18, 20)
+shape = SubResource("RectangleShape2D_5p6gn")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1564844954]
+position = Vector2(-2, 0)
+collision_layer = 64
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=225134756]
+position = Vector2(20.073177, 20.252396)
+scale = Vector2(1.3853649, 1.1495204)
+shape = SubResource("RectangleShape2D_klfxy")
+
+[node name="EnemyHitboxComponent" type="Node" parent="." unique_id=132962951 node_paths=PackedStringArray("hitbox")]
+script = ExtResource("1_klfxy")
+hitbox = NodePath("../Hitbox")
+metadata/_custom_type_script = "uid://dwk2twd4ubw2k"

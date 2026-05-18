@@ -53,10 +53,11 @@ script = ExtResource("4_4ejnq")
 player = NodePath("..")
 metadata/_custom_type_script = "uid://chth5otgebyeo"
 
-[node name="PlayerHurtBoxComponent" type="Node" parent="." unique_id=1669903285 node_paths=PackedStringArray("player", "player_hurt_area")]
+[node name="PlayerHurtBoxComponent" type="Node" parent="." unique_id=1669903285 node_paths=PackedStringArray("player", "player_hurt_area", "color_rect")]
 script = ExtResource("6_p0xxn")
 player = NodePath("..")
 player_hurt_area = NodePath("../Hurtbox")
+color_rect = NodePath("../playerContainer/ColorRect")
 metadata/_custom_type_script = "uid://c1p5tl4d4hd3n"
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1716426101]
