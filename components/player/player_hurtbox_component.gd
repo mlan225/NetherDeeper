@@ -6,6 +6,7 @@ extends Node
 @export var player_hurt_area: Area2D
 #DEVNOTE: temporary player character model until a sprite is implimented
 @export var color_rect = ColorRect
+@export var player_health_component: PlayerHealthComponent
 
 #DEVNOTE: Temporary color rect for player. Will replace with sprite
 var _color_rect_original_color: Color
@@ -27,7 +28,8 @@ func _on_hurt_area_entered(area: Area2D):
 
 #DEVNOTE: Damage to take will be set later for different sources
 func take_damage(damage_to_take:int = 0):
-	print("player took damage")
+	#DEVNOTE: Temporarily setting damage to take until enemy has damage numbers to give
+	player_health_component.take_damage(10)
 	#DEVNOTE: Temporary for now until it is replaced with sprite
 	color_rect.color = Color.RED
 	_is_hurt = true

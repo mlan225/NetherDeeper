@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cev57jx7o41jq" path="res://enemy/slime/slime.tscn" id="2_4napq"]
 [ext_resource type="Script" uid="uid://dse1rg3m5bcq0" path="res://components/enemy/spawn_manager.gd" id="4_ynnkj"]
 [ext_resource type="Script" uid="uid://cydnpnmmti1bf" path="res://components/enemy/slime_spawner.gd" id="5_7lvt2"]
-[ext_resource type="PackedScene" uid="uid://djfi8kvuum4g7" path="res://enemy/test_damage_block/test_damage_block.tscn" id="6_7lvt2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hjlt"]
 size = Vector2(943, 31)
@@ -68,11 +67,4 @@ slime_scene = ExtResource("2_4napq")
 left_boundry = NodePath("../Floor/LeftBoundry")
 right_boundry = NodePath("../Floor/RightBoundry")
 scene_floor = NodePath("../Floor")
-max_spawn_count = 0
 metadata/_custom_type_script = "uid://cydnpnmmti1bf"
-
-[node name="TestDamageBlock" parent="." unique_id=20678461 instance=ExtResource("6_7lvt2")]
-position = Vector2(262, 438)
-
-[node name="TestDamageBlock2" parent="." unique_id=727890576 instance=ExtResource("6_7lvt2")]
-position = Vector2(345, 437)
