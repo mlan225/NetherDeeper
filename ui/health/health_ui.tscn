@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://2wyxudgsqx61"]
+
+[ext_resource type="Script" uid="uid://bj2uy886yxa1y" path="res://ui/health/health_ui.gd" id="1_3vpjw"]
+[ext_resource type="PackedScene" uid="uid://dgfbujxe2n4ku" path="res://sprites/ui/heart.tscn" id="2_3vpjw"]
+
+[node name="HealthUi" type="Control" unique_id=1424548492 groups=["healthUi"]]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+script = ExtResource("1_3vpjw")
+heart_scene = ExtResource("2_3vpjw")
+
+[node name="Hearts" type="HBoxContainer" parent="." unique_id=5422378]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 38.0
+offset_right = 78.0
+offset_bottom = 78.0
+theme_override_constants/separation = 20

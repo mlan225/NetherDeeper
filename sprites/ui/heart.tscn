@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dgfbujxe2n4ku"]
+
+[ext_resource type="Texture2D" uid="uid://dk5jvvphrr6eq" path="res://sprites/ui/heart.png" id="1_g7unh"]
+
+[node name="Heart" type="Control" unique_id=514866151]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1388305475]
+layout_mode = 0
+offset_left = -67.99999
+offset_top = -53.999996
+offset_right = -3.9999924
+offset_bottom = 10.000004
+scale = Vector2(2.0716238, 2.0481715)
+texture = ExtResource("1_g7unh")
+stretch_mode = 3

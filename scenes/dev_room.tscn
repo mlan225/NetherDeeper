@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c3s7viippuc3h"]
 
 [ext_resource type="Script" uid="uid://b4o2gsbxiqdjn" path="res://components/enemy/enemy_boundry_component.gd" id="1_4ospm"]
+[ext_resource type="PackedScene" uid="uid://2wyxudgsqx61" path="res://ui/health/health_ui.tscn" id="1_7lvt2"]
 [ext_resource type="PackedScene" uid="uid://cfqmmglqjitys" path="res://player/test_player/player.tscn" id="1_p6lu6"]
 [ext_resource type="PackedScene" uid="uid://cev57jx7o41jq" path="res://enemy/slime/slime.tscn" id="2_4napq"]
 [ext_resource type="Script" uid="uid://dse1rg3m5bcq0" path="res://components/enemy/spawn_manager.gd" id="4_ynnkj"]
@@ -16,6 +17,12 @@ size = Vector2(11, 510)
 size = Vector2(11, 512)
 
 [node name="DevRoom" type="Node2D" unique_id=243512570]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=148871262]
+follow_viewport_enabled = true
+
+[node name="HealthUi" parent="CanvasLayer" unique_id=358782489 instance=ExtResource("1_7lvt2")]
+max_health = null
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=1255799877]
 position = Vector2(108, 501)

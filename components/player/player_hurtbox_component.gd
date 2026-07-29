@@ -29,7 +29,7 @@ func _on_hurt_area_entered(area: Area2D):
 #DEVNOTE: Damage to take will be set later for different sources
 func take_damage(damage_to_take:int = 0):
 	#DEVNOTE: Temporarily setting damage to take until enemy has damage numbers to give
-	player_health_component.take_damage(10)
+	player_health_component.take_damage(1)
 	#DEVNOTE: Temporary for now until it is replaced with sprite
 	color_rect.color = Color.RED
 	_is_hurt = true
